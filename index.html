@@ -23,7 +23,7 @@
 
   tryit.addEventListener('click', () => {
     drawImg()
-    fillText();
+    fillName();
   });
   
   save.addEventListener('click', () => {
@@ -39,10 +39,10 @@
     ctx.drawImage(img, 0, 0,400,700);
   }
   
-  const fillText = () => {
+  const fillName = () => {
     ctx.font='30px Arial';
-    ctx.fillText(name.value,200,450);
     ctx.textAlign = "center";
+    ctx.fillText(name.value,200,450);
   }
 
 </script>
