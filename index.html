@@ -7,7 +7,7 @@
   <p><button id="btn-try">Tryit</button></p>
 
   <p>Click "Tryit" to draw the image on the canvas.</p>
-  <canvas id="myCanvas" width="200" height="300" style="border:1px solid grey"></canvas>
+  <canvas id="myCanvas" width="300" height="700" style="border:1px solid grey"></canvas>
   <p><button id="btn-save">Save Image</button></p>
 <script>
 
@@ -36,7 +36,7 @@
   const drawImg = () => {
     var img = document.createElement('img')
     img.src = './card.jpg';
-    ctx.drawImage(img, 0, 0,200,300);
+    ctx.drawImage(img, 0, 0,300,700);
   }
   
   const fillText = () => {
