@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+  <label for="name">What's your name?</label>
+  <input type="text" id="name">
+  <p><button id="btn-try">Tryit</button></p>
+
+  <p>Click "Tryit" to draw the image on the canvas.</p>
+  <canvas id="myCanvas" width="200" height="300" style="border:1px solid grey"></canvas>
+  <p><button id="btn-save">Save Image</button></p>
+<script>
+
+  const name = document.getElementById('name');
+  const tryit = document.getElementById('btn-try');
+  const save = document.getElementById('btn-save');
+  const canvas = document.getElementById('myCanvas');
+  const ctx = canvas.getContext('2d');
+
+  window.onload = (e) => {
+    drawImg();
+  }
+
+  tryit.addEventListener('click', () => {
+    drawImg()
+    fillText();
+  });
+  
+  save.addEventListener('click', () => {
+    const link = document.createElement('a')
+    link.download = `${name.value}.jpg`
+    link.href = canvas.toDataURL()
+    link.click()
+  })
+  
+  const drawImg = () => {
+    var img = document.createElement('img')
+    img.src = './card.jpg';
+    ctx.drawImage(img, 0, 0,200,300);
+  }
+  
+  const fillText = () => {
+    ctx.font='10px Arial';
+    ctx.fillText(name.value,70,200);
+  }
+
+</script>
+
+</body>
+</html>
